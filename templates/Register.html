@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>DLCSY注册</title>
+        <link rel="shortcut icon" href="../static/img/icon-1.png" type="image/x-icon">
+
+		<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+		<!-- Bootstrap的CDN -->
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 可选的Bootstrap主题文件（一般不使用） -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="shortcut icon" href="../static/img/icon-1.png" type="image/x-icon">
+
+				<link rel="stylesheet" type="text/css" href="../static/style_Main/basic.css">
+				<link rel="stylesheet" type="text/css" href="../static/style_Main/index201708.css">
+				<link rel="stylesheet" type="text/css" href="../static/style_Main/login_sub.css">
+
+				<script src="../static/style_Main/jquery-1.9.1.min.js.下载"></script>
+
+
+	</head>
+
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+	</script>
+	<!-- 百度的jQuaryCDN -->
+
+	<style>
+		h2 {
+			color: #003BB3;
+		}
+
+		li {
+			list-style-type: none;
+			margin-right: 10px;
+		}
+
+		.div_mid1{
+			border-radius: 5px;
+			height: 800px;
+			width: 80%;
+
+
+			border: 1px;
+		}
+
+		.form2{
+			position:absolute;
+			right: 30%;
+			top: 20%;
+		}
+		.zhuce{
+
+		}
+
+        label{
+            color: red;
+        }
+
+	</style>
+
+
+	<body style="background: #f1f1f1;">
+
+
+        <link rel="stylesheet" type="text/css" href="../static/style_Main/login_sub.css">
+
+   <div class="navigation">
+			<a class="home" href="welcome1"></a>
+			<ul class="menu">
+				<li class="link"><a href="welcome1">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="I_N/goto_details_1/625">本届通知</a></li>
+				<li class="link">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="I_N/goto_news_1">大赛新闻</a></li>
+                      	<li><a target="_blank" href="I_N/goto_Info_1">大赛通知</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="I_N/goto_details/636">团队赛通知</a></li>-->
+
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_1">辅导资料</a></li>
+                        <li><a href="../login">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="javascript:void(0)">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../goto_competitions_1">比赛题目</a></li>
+                         <li><a target="_blank" id = "down_data">数据集</a></li>
+                        <li><a target="_blank" id="join_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_1">联系我们</a></li>
+
+				<li class="link newsHead" id="newsHead" style="display:none;">
+					<a href=""><span class="newsNum" id="newsNum"></span>
+						<div class="news-msg" id="news-msg">有新的消息</div>
+					</a>
+				</li>
+				<li id="login_normal" class="account" style="margin-left: 100px;">
+
+					<a href="/../login" >登录</a>
+					<a href="/../register" >注册</a>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="div_mid1">
+			<form action="register_sub" method="post" class="form2">
+                {% csrf_token %}
+				<h2 style="margin-left: 20px;margin-bottom: 30px;margin-top: 50px;">注册账号</h2>
+				账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" name = "user_name_r" id = "username"/><label id = "l_0"></label><br /><br />
+				密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="text" name = "password_r" id = "password"/><br /><br />
+				重复密码：<input type="text" name = "repeat_password" id = "repeat_password"/><label id = "l_1"></label> <br /><br />
+				昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" name = "nickname_r" id="nickname"/><label id="l_2"></label><br /><br />
+
+					手机号码：
+                   <input type="text" placeholder="11位数的手机号码" id="mobile" name="mobile"/>
+                   <!--<span class="error_tip">提示信息</span>-->
+					<label id="l_3"></label>
+				<br><br>
+					<!--<label style="color: #000000">验证码:&nbsp;&nbsp;&nbsp;&nbsp;</label>-->
+					验证码：&nbsp;&nbsp;&nbsp;&nbsp;
+                   <input type="text" name="code" placeholder="请输入手机验证码" style="width: 140px;">
+                   &nbsp;&nbsp;
+                   <input type="button" value=" 获取验证码" id="zphone" style="width: 100px;margin-left: 10px">
+					<br><br>
+
+
+
+				邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" name = "email_r" id="email"/><label id="l_4"></label><br /><br />
+				密保问题：<input type="text" name = "security_question_r" id="question"/><label>*(重置密码会用到)</label><br /><br />
+				答&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;案：<input type="text" name = "answer_r" id="answer"/><br /><br />
+
+				<input type="button" name="" id="handup" value="注册" style="padding: 10px;width: 80px;height: 35px;margin-left: 100px;"/>
+			</form>
+
+		</div>
+
+<div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边)-->
+		<script src="/static/jquery-3.3.1.min.js">
+        </script>
+
+		<script>
+			//手机验证码部分
+		$('#zphone').click(
+			function(){
+			//发送验证码
+				if($('#mobile').val() != null){
+					$.get('send_phone_message', {mobile:$('#mobile').val()}, function(msg) {
+						alert(jQuery.trim(msg.msg));
+						if(msg.msg=='提交成功'){
+							RemainTime();
+						}
+					});
+				}
+
+		})
+
+    //按钮倒计时
+    var iTime = 60;
+    sTime = ''
+    function RemainTime(){
+        if (iTime == 0) {
+            document.getElementById('zphone').disabled = false;
+            sTime="获取验证码";
+            iTime = 60;
+            document.getElementById('zphone').value = sTime;
+            return;
+        }else{
+            document.getElementById('zphone').disabled = true;
+            sTime="重新发送(" + iTime + ")";
+            iTime--;
+        }
+        setTimeout(function() { RemainTime() },1000)
+        document.getElementById('zphone').value = sTime;
+    }
+
+    // 检查用户输入的手机号是否合法
+    // function check_mobile() {
+	//
+    //     var re = /^1[345678]\d{9}$/; //校验手机号
+	//
+    //     if(re.test($('#mobile').val()))
+    //     {
+    //         $('#mobile').next().hide();
+    //         error_mobile = false;
+    //         document.getElementById('zphone').disabled = false;
+    //     }
+    //     else
+    //     {
+    //         $('#mobile').next().html('你输入的手机格式不正确')
+    //         $('#mobile').next().show();
+    //         error_mobile = true;
+    //         document.getElementById('zphone').disabled = true;
+    //     }
+    // }
+
+
+
+		</script>
+
+        <script>
+           /* var flag = false;
+            $("document").ready(function () {
+               alert("OK!!!!");
+                $("#handup").attr('disabled',"disabled");
+            });*/
+
+           /*$('#username').blur(function () {
+                var reg = /^[0-9a-zA-Z]*$/g
+                if(reg.test($('#username').val())){
+                    $('#l_0').text("用户名格式有误");
+                }
+                else{
+                     $('#l_0').text("");
+                }
+            });*/
+
+
+            $('#repeat_password').blur(function () {
+                var psw = $('#password').val();
+                if($('#repeat_password').val() != psw){
+                    $('#l_1').text("两次密码输入需一致");
+                }
+                else{
+                     $('#l_1').text("");
+                }
+            });
+
+            $("#nickname").blur(function () {
+                if ($("#nickname").val().length == 0 ||$("#nickname").val().length > 12){
+                    $("#l_2").text("昵称需在1到12个字符以内");
+                }
+                else{
+                    $("#l_2").text("");
+
+                }
+            });
+
+            $("#mobile").blur(function () {
+                var phonereg = /^[\d]{5,20}$/;
+                if( !phonereg.test($("#mobile").val()) ){
+                    $("#l_3").text("请输入正确格式的手机号");
+                    document.getElementById('zphone').disabled = true;
+                }
+                else{
+                    $("#l_3").text("");
+                    document.getElementById('zphone').disabled = false;
+                }
+            });
+
+            $("#email").blur(function () {
+                var emailreg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                if ( !emailreg.test($("#email").val()) ){
+                    $("#l_4").text("请输入正确格式的邮箱");
+                }
+                else {
+                    $("#l_4").text("");
+                }
+            });
+
+
+
+            $('#handup').click(function () {
+                var l0 = $('#l_0').val();
+                var l1 = $("#l_1").val();
+                var l2 = $("#l_2").val();
+                var l3 = $("#l_3").val();
+                var l4 = $("#l_4").val();
+                console.log(l0);
+                console.log(l1);
+                console.log(l2);
+                console.log(l3);
+                console.log(l4);
+                console.log($('#repeat_password').val());
+                console.log($("#nickname").val());
+                console.log($("#mobile").val());
+                console.log($("#email").val());
+                console.log($("#question").val());
+                console.log($("#answer").val());
+                if(l1 == "" && l2 == "" && l3 == "" && l4 == ""
+                    && $('#repeat_password').val() != null && $("#nickname").val() != null
+                    && $("#mobile").val() != null && $("#email").val() != null && $("#question").val() != null
+                    &&$("#answer").val() != null  ){
+                    this.form.submit();
+                }
+                else{
+                    alert("存在不合法的信息");
+                }
+
+            });
+
+            $("document").ready(function () {
+                var error_register = "{{ error_register |safe }}"
+                if(error_register != ""){
+                    alert(error_register)
+                }
+            });
+
+           
+
+
+        </script>
+
+        <script>
+                        $("#down_data").click(function () {
+                            var r = confirm("您需要先登录才能下载");
+                            if(r == true){
+                                window.location.href = "../login"
+                            }
+                        });
+                        $("#join_team").click(function () {
+                            var r = confirm("您需要先登录才能参加队伍");
+                            if(r == true){
+                                window.location.href = "../login"
+                            }
+                        });
+                    </script>
+
+		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="http://unrestraint.oss-cn-beijing.aliyuncs.com/static/js/config.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+		<script src="http://unrestraint.oss-cn-beijing.aliyuncs.com/static/js/login.js"></script>
+        </div>
+    </body>
+</html>

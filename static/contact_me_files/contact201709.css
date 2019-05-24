@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.navigation,
+.footer{
+	margin: 0;
+}
+
+
+/*联系我们*/
+.contact .sec-t{
+	font-size: 20px !important;
+	color: #000;
+	font-weight: bold;
+	padding: 60px 0 10px 0;
+}
+.contact .set-t2{
+	font-size: 14px;
+	color: #333;
+	padding-bottom: 35px;
+}
+.contact .box{
+	background: #F1F1F1;
+}
+.contact .box .item{
+	float: left;
+	width: 550px;
+	margin: 0 0 18px 30px;
+}
+.contact .box .item:nth-child(2n+1){
+	margin-left: 0;
+}
+.contact .box .content{
+	height: 220px;
+	padding: 30px 0 0 40px; 
+	background: #fff;
+}
+
+.contact .box .content p{
+	font-size: 14px;
+	padding-bottom: 15px;
+	color: #333;
+}
+.contact .box .content .name{
+	font-size: 16px;
+	color: #22aef4;
+}
+.contact .box2{
+	padding-bottom: 50px ;
+}
+.contact .box2 .content{
+	height: 160px;
+}
+.contact .box2 .sec-t{
+	padding-top: 50px;
+}
+.contact .contact-way{
+	background: #fff;
+	color: #333;
+	font-size: 14px;
+	padding-bottom: 50px;
+}
+.contact .contact-way p.t{
+	padding: 60px 0 30px 0;
+	font-weight: bold;
+	font-size: 22px;
+	color: #666;
+}
+.contact .contact-way p img{
+	margin: -2px 9px 0 0;
+}
+.contact .contact-way ul li{
+	float: left;
+	width: 250px;
+}
+.contact .contact-way ul p{
+	font-size: 16px;
+	color: #000;
+}
+.contact .contact-way ul p.p1{
+	font-size: 14px;
+	color: #333333;
+	line-height: 16px;
+}
+.contact .contact-way p.tip{
+	color: #b2b2b2;
+	padding: 15px 0 40px 0;
+}

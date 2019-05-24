@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>忘记密码</title>
+
+        <!-- Bootstrap的CDN -->
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 可选的Bootstrap主题文件（一般不使用） -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="shortcut icon" href="../static/img/icon-1.png" type="image/x-icon">
+
+        <link rel="stylesheet" type="text/css" href="../static/style_Main/basic.css">
+        <link rel="stylesheet" type="text/css" href="../static/style_Main/index201708.css">
+        <link rel="stylesheet" type="text/css" href="../static/style_Main/login_sub.css">
+
+        <script src="../static/jquery-3.3.1.min.js"></script>
+        <script src="../static/style_Main/dasai_index_config.js.下载"></script>
+        <script src="../static/style_Main/public.js.下载"></script>
+
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/basic.css">
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/show.css">
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/form.css">
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/supples.css">
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/login_sub.css">
+
+		<script src="../static/style_Personal/jquery-1.9.1.min.js.下载"></script>
+		<!--<script src="../static/style_Personal/laydate.js.下载"></script>-->
+		<link type="text/css" rel="stylesheet" href="../static/style_Personal/laydate.css">
+		<link type="text/css" rel="stylesheet" href="../static/style_Personal/laydate(1).css" id="LayDateSkin">
+
+
+
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+	</script>
+<body>
+ <div class="navigation">
+			<a class="home" href="../../welcome1"></a>
+			<ul class="menu">
+				<li class="link"><a href="../../welcome1">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="I_N/goto_details_1/625">本届通知</a></li>
+				<li class="link">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="I_N/goto_news_1">大赛新闻</a></li>
+                      	<li><a target="_blank" href="I_N/goto_Info_1">大赛通知</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_1/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_1/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_1/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../I_N/goto_details_1/636">团队赛通知</a></li>-->
+
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_1">辅导资料</a></li>
+                        <li><a href="../login">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="javascript:void(0)">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../goto_competitions_1">比赛题目</a></li>
+                         <li><a href="../../login" target="_blank" id = "down_data">数据集</a></li>
+                        <li><a  href = "../../login" target="_blank" id="join_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_1">联系我们</a></li>
+
+				<li class="link newsHead" id="newsHead" style="display:none;">
+					<a href=""><span class="newsNum" id="newsNum"></span>
+						<div class="news-msg" id="news-msg">有新的消息</div>
+					</a>
+				</li>
+				<li id="login_normal" class="account" style="margin-left: 100px;">
+
+					<a href="/../login" >登录</a>
+					<a href="/../register">注册</a>
+				</li>
+
+			</ul>
+		</div>
+
+    <div style="height:600px;">
+
+        <div class="tab-content tab-1" style="height: 630px;padding-left: 200px;">
+                <form action="forget_psw_f" method="post">
+                    {% csrf_token %}
+						<div class="showMain relative">
+							<p class="title">忘记密码（第一步）</p>
+							<p><span>您的账号：</span>
+								<!--<ss ng-bind="auth.identityRealname" class="ng-binding">{{team_info.team_no}}</ss>-->
+                                <input type="text" name = "username_f">
+							</p>
+							<p><span>您的预留手机号：</span>
+								<!--<ss ng-bind="auth.identitySexStr" class="ng-binding">{{team_info.team_name}}</ss>-->
+                                <input type="text" name = "phone_f">
+							</p>
+							<!-- ngIf: auth.identityNation -->
+							<p ng-if="auth.identityNation " class="ng-scope"><span>您的邮箱：</span>
+								<!--<ss ng-bind="auth.identityNation" class="ng-binding">{{team_info.captain}}</ss>-->
+                                <input type="text" name="email_f">
+							</p><!-- end ngIf: auth.identityNation -->
+							<!-- ngIf: auth.identityOriginPlace -->
+							<input type="button" value="下一步" id = "next" style="margin-left: 200px;">
+
+                        </div>
+                </form>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+       $('#next').click(function () {
+            this.form.submit();
+        });
+        $("document").ready(function () {
+            var error_message = {{ error_message | safe }}
+            console.log(error_message);
+            if(error_message != null){
+                alert(error_message);
+            }
+        });
+
+    </script>
+
+
+    <div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+                    <script>
+                        $("#down_data").click(function () {
+                            var r = confirm("您需要先登录才能下载");
+                            if(r == true){
+                                window.location.href = "../login"
+                            }
+                        });
+                        $("#join_team").click(function () {
+                            var r = confirm("您需要先登录才能参加队伍");
+                            if(r == true){
+                                window.location.href = "../login"
+                            }
+                        });
+                    </script>
+
+
+
+</body>
+</html>

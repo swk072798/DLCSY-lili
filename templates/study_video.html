@@ -1,0 +1,276 @@
+
+
+<html class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><script type="text/javascript">
+
+</script>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<title>视频播放</title>
+
+          <link rel="icon" type="image/x-icon" href="../../static/img/icon-1.png">
+
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/basic.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/news.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/login_sub.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+		 <script src="/static/style_Cons/jquery-1.9.1.min.js.下载"></script>
+
+    </head>
+  	<body style="background-color: #f1f1f1">
+
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/login_sub.css">
+   <script src="/static/style_Cons/index_top.js.下载"></script>
+   <div class="navigation">
+			<a class="home" href="../../goto_L_Main"></a>
+			<ul class="menu">
+				<li class="link"><a href="../../goto_L_Main">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="../../I_N/goto_details_2/625">本届通知</a></li>
+				<li class="link act">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="../../I_N/goto_news_2">大赛新闻</a></li>
+                      	<li><a target="_blank" href="../../I_N/goto_Info_2">大赛通知</a></li>
+                      	<li><a target="_blank" href="../../I_N/goto_details_2/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="../../I_N/goto_details_2/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="../../I_N/goto_details_2/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../../I_N/goto_details_2/636">团队赛通知</a></li>-->
+
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="../../goto_download_study_2">辅导资料</a></li>
+                        <li><a href="/goto_watch_video">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="javascript:void(0)">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../../goto_competitions_2">比赛题目</a></li>
+                        <li><a target="_blank" href="../../go_to_download">数据集</a></li>
+                        <li><a target="_blank" href="../../show_team">参加队伍</a></li>
+                    </ul>
+                </li>
+				<li class="link"><a target="_blank" href="../../contact_me_2">联系我们</a></li>
+
+                <li id="login_logined" class="user" style="margin-left:100px;">
+					<div class="head">
+						<span style="display:none;">999</span>
+						<img src="../../static/img/touxiang_1.png">
+						<p>{{ request.session.username }}</p>
+					</div>
+
+					<ul id="login_logined_stu" identityid="1">
+						<li><a href="../../goto_personal_1">个人信息</a></li>
+						<li authstatus="4"><a href="../../goto_personal_2   ">队伍信息</a></li>
+						<li authstatus="4"><a href="../../goto_personal_3">上传结果</a></li>
+
+						<li class="quit"><a href="../welcome1">退出</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="lq-news" style="margin-bottom: 100px;">
+
+			<div class="top-line"></div>
+			<div class=" news-detail" id="detail" style="margin-left: 200px;float: left;">
+
+				<div class="detail-t" id="video_play">
+                    <p class="tag"style="font-size: 20px;">学习视频播放</p>
+
+                    <!--<iframe id="bili_video" src="//player.bilibili.com/player.html?aid=10590361&cid=27220658&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px;height: 480px"> </iframe>-->
+                </div>
+
+             </div>
+
+			</div>
+
+    <div style="width: 330px;height: 500px;display: inline-block;margin-left: 50px;background-color: white;overflow: auto;">
+
+
+    <table id="rounded-corner" summary="">
+        <thead>
+            <tr>
+                <th scope="col" id = "title_1">python类视频
+                <div id="sanjiao_1" style="width: 0;
+                                           height: 0;
+                                           border-top: 15px solid black;
+                                           border-left: 7px solid transparent;
+                                           border-right: 7px solid transparent;
+                                            float: right;"></div>
+                </th>
+
+            </tr>
+        </thead>
+            <tfoot>
+            <tr>
+                <td colspan="5"></td>
+            </tr>
+        </tfoot>
+        <tbody id = "body_1" >
+            {% for v in video_list_1 %}
+                        <tr style="padding-top: 5px;"><td style="font-size: 14px;">
+                            <a href="../change_video/{{ v.id }}" style=";margin-top: 20px;margin-left: 20px;" id="goto">{{ v.video_topic }}</a>
+                        </td></tr>
+                    {% endfor %}
+        </tbody>
+    </table>
+
+            <script>
+                var list1 = "{{ video_list_1|safe }}";
+                //console.log(list1);
+                $("#title_1").click(function () {
+                    $("#body_1").toggle();
+                });
+                //console.log("bbb");
+            </script>
+
+
+
+            <table id="rounded-corner" summary="">
+
+                    <thead>
+                        <tr>
+                            <th scope="col" id="title_2" >深度学习类视频
+                            <div id="sanjiao_2" style="width: 0;
+                                           height: 0;
+                                           border-top: 15px solid black;
+                                           border-left: 7px solid transparent;
+                                           border-right: 7px solid transparent;
+                                            float: right;"></div>
+                </th>
+                            </th>
+
+                        </tr>
+
+                    </thead>
+                        <tfoot>
+                        <tr>
+                            <td colspan="5"></td>
+                        </tr>
+                    </tfoot>
+                    <tbody id="body_2"">
+                        {% for v in video_list_2 %}
+                                    <tr style="padding-top: 5px;"><td style="font-size: 14px;">
+                                        <a href="../change_video/{{ v.id }}" style=";margin-top: 20px;margin-left: 20px;">{{ v.video_topic }}</a>
+                                    </td></tr>
+                                {% endfor %}
+                    </tbody>
+                </table>
+            <script>
+                //console.log("aaa");
+                $("#title_2").click(function () {
+                    $("#body_2").toggle();
+                });
+                //console.log("bbb");
+            </script>
+
+            <table id="rounded-corner" summary="">
+        <thead>
+            <tr>
+                <th scope="col" id="title_3">图像处理类视频
+                <div id="sanjiao" style="width: 0;
+                                           height: 0;
+                                           border-top: 15px solid black;
+                                           border-left: 7px solid transparent;
+                                           border-right: 7px solid transparent;
+                                            float: right;"></div>
+                </th>
+                </th>
+
+            </tr>
+        </thead>
+            <tfoot>
+            <tr>
+                <td colspan="5"></td>
+            </tr>
+        </tfoot>
+        <tbody id="body_3">
+            {% for v in video_list_3 %}
+                        <tr style="padding-top: 5px;"><td style="font-size: 14px;">
+                            <a href="../change_video/{{ v.id }}" style=";margin-top: 20px;margin-left: 20px;">{{ v.video_topic }}</a>
+                        </td></tr>
+                    {% endfor %}
+        </tbody>
+    </table>
+
+            <script>
+                //console.log("aaa");
+                $("#title_3").click(function () {
+                    $("#body_3").toggle();
+                });
+                //console.log("bbb");
+
+
+            </script>
+
+
+            </div>
+
+        <script>
+            $(document).ready(function () {
+                var now_video = "{{ now_play | safe }}";
+
+                //console.log(now_video+"    aaaaaaa");
+                if(now_video != ""){
+                    console.log(now_video);
+
+                    $("#video_play").append('<iframe id="bili_video" src="{{now_play | safe}}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px;height: 480px;margin:50px;"> </iframe>')
+                }
+                else{
+                    console.log("hahahaha");
+                    $("#video_play").append('<iframe id="bili_video" src="//player.bilibili.com/player.html?aid=4050443&cid=6534573&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px;height: 480px;margin:50px;"> </iframe>')
+                }
+            }
+
+            );
+        </script>
+
+		</div>
+		<div class="footer" style="margin-top: 50px;">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="bg2">
+				<div class="clearfix wrap">
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,6 @@
+.file-selecter.uploading{
+    display: block;
+    background-image: url(/common/image/loading_2.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}

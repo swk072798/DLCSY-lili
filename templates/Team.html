@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/title.css" rel="stylesheet" type = "text/css">
+		<!-- 可选的Bootstrap主题文件（一般不使用） -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="/static/jquery-3.3.1.min.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../static/img/icon-1.png" type="image/x-icon">
+
+				<link rel="stylesheet" type="text/css" href="../static/style_Main/basic.css">
+				<link rel="stylesheet" type="text/css" href="../static/style_Main/index201708.css">
+				<link rel="stylesheet" type="text/css" href="../static/style_Main/login_sub.css">
+
+				<script src="../static/style_Main/jquery-1.9.1.min.js.下载"></script>
+
+</head>
+
+<body>
+<link rel="stylesheet" type="text/css" href="../static/style_Main/login_sub.css">
+
+ <div class="navigation">
+			<a class="home" href="../../goto_L_Main"></a>
+			<ul class="menu">
+				<li class="link"><a href="../../goto_L_Main">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="I_N/goto_details_2/625">本届通知</a></li>
+				<li class="link">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="I_N/goto_news_2">大赛新闻</a></li>
+                      	<li><a target="_blank" href="I_N/goto_Info_2">大赛通知</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_2/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_2/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_2/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../I_N/goto_details_2/636">团队赛通知</a></li>-->
+
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_2">辅导资料</a></li>
+                        <li><a href="/goto_watch_video">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="#">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="goto_competitions_2">比赛题目</a></li>
+                        <li><a target="_blank" href="go_to_download">数据集</a></li>
+                        <li><a target="_blank" href="../show_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_2">联系我们</a></li>
+
+
+				<li id="login_logined" class="user" style="margin-left:100px;">
+					<div class="head">
+						<span style="display:none;">999</span>
+						<img src="../static/img/touxiang_1.png">
+						<p>{{ request.session.username }}</p>
+					</div>
+
+					<ul id="login_logined_stu" identityid="1">
+						<li><a href="../goto_personal_1">个人信息</a></li>
+						<li authstatus="4"><a href="../goto_personal_1">队伍信息</a></li>
+						<li authstatus="4"><a href="../goto_personal_1">上传结果</a></li>
+
+						<li class="quit"><a href="../welcome1">退出</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+<br><br><br>
+    <h4><p align="center">若不想参加别人的队伍&nbsp;&nbsp;<a href="go_to_create">点我创建队伍</a></p></h4>
+<div class="container-fluid" style="height: 700px">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table">
+                <caption>当前队伍的比赛编号为：{% for foo in event_id %}
+                                            {{ foo.event_id }}
+                                        {% endfor %}
+                </caption>
+
+				<thead>
+					<tr>
+						<th>
+							队伍编号
+						</th>
+						<th>
+							队伍名称
+						</th>
+                        <th>
+							队伍人数
+						</th>
+                        <th>
+							队长姓名
+						</th>
+                        <th>
+							操作
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for info in team_info %}
+                    <tr>
+                        <td>{{ info.team_no }}</td>
+                        <td>{{ info.team_name }}</td>
+                        <td>{{ info.num_of_troops }}</td>
+                        <td>{{ info.captain }}</td>
+                        <td><a href = "join_in_team/{{ info.team_no }}">加入队伍</a></td>
+                    </tr>
+        {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+        <script>
+
+            $("document").ready(function () {
+            var error_message_4 = "{{ error_4 |safe }}"
+            if(error_message_4 != ""){
+                alert(error_message_4);
+            }
+
+        })
+        </script>
+</body>
+</html>

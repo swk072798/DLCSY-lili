@@ -1,0 +1,147 @@
+
+<html  class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><script type="text/javascript">
+
+</script>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<title>大赛新闻</title>
+
+          <link rel="icon" type="image/x-icon" href="../static/img/icon-1.png">
+
+
+		<link rel="stylesheet" type="text/css" href="../static/style_news/basic.css">
+		<link rel="stylesheet" type="text/css" href="../static/style_news/news.css">
+		<link rel="stylesheet" type="text/css" href="../static/style_news/login_sub.css">
+
+		 <script src="../static/style_news/jquery-1.9.1.min.js.下载"></script>
+
+    </head>
+  	<body>
+     	<link rel="stylesheet" type="text/css" href="../static/style_news/login_sub.css">
+   <div class="navigation">
+			<a class="home" href="../goto_L_Main"></a>
+			<ul class="menu">
+				<li class="link"><a href="../goto_L_Main">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="../I_N/goto_details_2/625">本届通知</a></li>
+				<li class="link act">
+					<a href="javascript:void(0);">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="">大赛新闻</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_Info_2">大赛通知</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_details_2/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_details_2/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_details_2/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../I_N/goto_details_2/636">团队赛通知</a></li>-->
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_2">辅导资料</a></li>
+                        <li><a href="/goto_watch_video">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="javascript:void(0)">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../goto_competitions_2">比赛题目</a></li>
+                        <li><a target="_blank" href="../go_to_download">数据集</a></li>
+                        <li><a target="_blank" href="../show_team" id="join_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_2">联系我们</a></li>
+
+				<li class="link newsHead" id="newsHead" style="display:none;">
+					<a href=""><span class="newsNum" id="newsNum"></span>
+						<div class="news-msg" id="news-msg">有新的消息</div>
+					</a>
+				</li>
+                <li id="login_logined" class="user" style="margin-left:100px;">
+					<div class="head">
+						<span style="display:none;">999</span>
+						<img src="../static/img/touxiang_1.png">
+						<p>{{ request.session.username }}</p>
+					</div>
+
+					<ul id="login_logined_stu" identityid="1">
+						<li><a href="../../goto_personal_1">个人信息</a></li>
+						<li authstatus="4"><a href="../../goto_personal_2   ">队伍信息</a></li>
+						<li authstatus="4"><a href="../../goto_personal_3">上传结果</a></li>
+
+						<li class="quit"><a href="../welcome1">退出</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+<script>
+
+
+</script><div class="lq-news">
+			<div class="top-line" style="height: 50px;"></div>
+			<div class="wrap1130" id="news_list">
+                <div class="news-list" id="news_id">
+                    <div id="news">
+                        {% for foo in news_obj %}
+                            <div class="block pl200">
+                                <img src="../static/style_news/news.jpg">
+                                <div class="clearfix news-t"><a href="goto_details_2/{{ foo.id }}">{{ foo.title }}</a><p class="fr tag">深度学习竞赛组委会</p>
+                                </div>
+                                <div class="news-text">
+                                    {{ foo.content }}
+                                </div>
+                                <div class="clearfix news-info">
+                                    <p class="fl">{{ foo.ar_time }}</p><a href="goto_details_2/{{ foo.id }}" class="fr">阅读全文</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+
+			</div>
+		</div>
+		<div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p><!--  邮编: 100846 -->
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="bg2">
+
+		</div>
+<script src="../static/style_news/z_baidu_statistics.js.下载" language="JavaScript"></script>
+
+
+
+</div>
+</body></html>

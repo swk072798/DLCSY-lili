@@ -1,0 +1,263 @@
+
+<html class="ng-scope">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			@charset "UTF-8";
+
+			[ng\:cloak],
+			[ng-cloak],
+			[data-ng-cloak],
+			[x-ng-cloak],
+			.ng-cloak,
+			.x-ng-cloak,
+			.ng-hide:not(.ng-hide-animate) {
+				display: none !important;
+			}
+
+			ng\:form {
+				display: block;
+			}
+		</style>
+
+		<script type="text/javascript">
+
+		</script>
+
+
+
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<title>个人中心</title>
+
+
+		<link rel="shortcut icon" type="image/x-icon" href="../static/img/icon-1.png">
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/basic.css">
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/show.css">
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/form.css">
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/supples.css">
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/login_sub.css">
+
+		<script src="../static/style_Personal/jquery-1.9.1.min.js.下载"></script>
+
+		<link type="text/css" rel="stylesheet" href="../static/style_Personal/laydate.css">
+		<link type="text/css" rel="stylesheet" href="../static/style_Personal/laydate(1).css" id="LayDateSkin">
+
+		<style>
+			.divR {
+				margin-bottom: 0px !important;
+			}
+
+			.stu-photo>.list-t {
+				width: 76px !important;
+				margin-left: -20px;
+				text-align: right;
+			}
+
+			.msg-box .msg {
+				position: relative;
+				font-size: 14px;
+				display: contents;
+				color: #FF5600;
+			}
+		</style>
+	</head>
+	<body>
+
+
+		<link rel="stylesheet" type="text/css" href="../static/style_Personal/login_sub.css">
+		<script src="../static/style_Personal/index_top.js.下载"></script>
+
+		<div class="navigation">
+			<a class="home" href="../../goto_L_Main"></a>
+			<ul class="menu">
+				<li class="link"><a href="../../goto_L_Main">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="I_N/goto_details_1/625">本届通知</a></li>
+				<li class="link">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="../I_N/goto_news_2">大赛新闻</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_Info_2">大赛通知</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_details_2/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_details_2/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="../I_N/goto_details_2/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../I_N/goto_details_2/636">团队赛通知</a></li>-->
+
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_2">辅导资料</a></li>
+                        <li><a href="/goto_watch_video">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="javascript:void(0)">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../goto_competitions_2">比赛题目</a></li>
+                        <li><a target="_blank" href="../go_to_download">数据集</a></li>
+                        <li><a target="_blank" href="../show_team" id="join_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_2">联系我们</a></li>
+
+				<li class="link newsHead" id="newsHead" style="display:none;">
+					<a href=""><span class="newsNum" id="newsNum"></span>
+						<div class="news-msg" id="news-msg">有新的消息</div>
+					</a>
+				</li>
+
+                <li id="login_logined" class="user" style="margin-left:100px;">
+					<div class="head">
+						<span style="display:none;">999</span>
+						<img src="../static/img/touxiang_1.png">
+						<p>{{ request.session.username }}</p>
+					</div>
+
+					<ul id="login_logined_stu" identityid="1">
+						<li><a href="../../goto_personal_1">个人信息</a></li>
+						<li authstatus="4"><a href="../../goto_personal_2   ">队伍信息</a></li>
+						<li authstatus="4"><a href="../../goto_personal_3">上传结果</a></li>
+
+						<li class="quit"><a href="../welcome1">退出</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+
+		<div class="wrap">
+			<div class="clearfix">
+				<div class="nav fl">
+					<p class="center picture">
+						<img src="../static/img/touxiang_1.png" width="101" height="101">
+						<span class="h3 c-333">{{ request.session.username }}</span>
+					</p>
+					<ul activeleft="myauth" ng-controller="indexLeftUserCtrl"
+					 class="ng-scope">
+
+						<li id="leftbar_myauth" class="ng-scope "><a href="javascript:void(0)"><img
+								 src="../static/style_Personal/icon-safe.png">个人信息</a></li>
+						<li id="leftbar_mydasai" certified="" style="" class="ng-scope"><a href="goto_personal_2"><img
+								 src="../static/style_Personal/icon-start.png">队伍信息</a></li>
+						<li id="leftbar_myawards" certified="" style="" class="ng-scope"><a href="goto_personal_3"><img
+								 src="../static/style_Personal/icon-certificate.png">上传结果</a></li>
+
+						<li id="leftbar_myorder" certified="" style="" class="ng-scope"><a href="goto_personal_4"><img
+								 src="../static/style_Personal/icon-order.png">我的订单</a></li>
+						<li id="leftbar_mymessage" class="ng-scope active"><a href="goto_personal_5"><img
+								 src="../static/style_Personal/icon-message.png">我的消息</a></li>
+						<li id="leftbar_address" class="ng-scope"><a href="../goto_personal_6"><img
+								 src="../static/style_Personal/icon-address.png">我的地址</a></li>
+						<li id="leftbar_myaccount" class="ng-scope"><a href="javascript:void(0);"><img src="../static/style_Personal/icon-account.png">账号设置</a>
+							<ul class="sec-nav" style="display: none;" id="1_2">
+								<li><a id="accountinfoPage" href="../goto_personal_7_1"><img src="../static/style_Personal/icon-pre.png">重置密码</a></li>
+								<li><a id="account2" href="../goto_personal_7_2"><img src="../static/style_Personal/icon-pre.png">修改密保</a></li>
+                            </ul>
+						</li>
+                        <script>
+                            $("#leftbar_myaccount").click(function () {
+                                //console.log("cccc");
+                                $("#1_2").toggle();
+                            });
+                        </script>
+						<script class="ng-scope">
+							$(function(){
+	if(new Date().getTime()>new Date('2018/02/28 13:30').getTime()){
+		$(".weike-banner").show();
+	}
+})
+</script>
+					</ul>
+				</div>
+
+
+
+				<div id="authdiv4" class="divR fl relative" style="">
+
+					<ul class="nav-tab-a clearfix">
+						<li class="act">个人认证</li>
+					</ul>
+
+					<div class="tab-content tab-1">
+						<div class="divMain">
+							<p class="green c-33ba9b font-s14 line-h40 bold">恭喜，您的个人认证信息已经通过后台审核！</p>
+						</div>
+						<div class="block-5"></div>
+						<div class="showMain relative">
+
+                        <table>
+                            <tr>
+                                <td style="font-size: 20px;padding-left: 5px;">消息内容</td>
+                                <td style="font-size: 20px;padding-left: 5px;">发布时间</td>
+                            </tr>
+                            {% for foo in system_info %}
+                                <tr>
+                                    <td style="background-color: #f0f0f0;padding: 8px;">{{ foo.info_content }}</td>
+                                    <td style="background-color: #f0f0f0;padding:8px;">{{ foo.now_date }}</td>
+                                </tr>
+                            {% endfor %}
+                            
+
+
+                        </table>
+						</div>
+						<div class="block-5"></div>
+						<div class="showMain">
+                        <div id="toApplybtn" class="center mt25">
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+
+		<div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<script src="../static/style_Personal/z_baidu_statistics.js.下载" language="JavaScript"></script>
+
+
+	</body>
+</html>

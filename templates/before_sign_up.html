@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报名页面</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/title.css" rel="stylesheet" type = "text/css">
+    <link href="../static/css/Sign_up_page.css" rel="stylesheet" type = "text/css">
+
+
+		<!-- 可选的Bootstrap主题文件（一般不使用） -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="/static/jquery-3.3.1.min.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="shortcut icon" href="../static/img/icon-1.png" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/basic.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/news.css">
+		<link rel="stylesheet" type="text/css" href="/static/style_Cons/login_sub.css">
+
+		 <script src="/static/style_Cons/jquery-1.9.1.min.js.下载"></script>
+
+
+</head>
+
+<style>
+    label{
+        color: red;
+    }
+</style>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="/static/style_Cons/login_sub.css">
+
+   <div class="navigation">
+			<a class="home" href="../goto_L_Main"></a>
+			<ul class="menu">
+				<li class="link"><a href="../goto_L_Main">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="I_N/goto_details_2/625">本届通知</a></li>
+				<li class="link act">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+                      	<li><a target="_blank" href="I_N/goto_news_2">大赛新闻</a></li>
+                      	<li><a target="_blank" href="I_N/goto_Info_2">大赛通知</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_2/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_2/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_2/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../I_N/goto_details_2/636">团队赛通知</a></li>-->
+
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_2">辅导资料</a></li>
+                        <li><a href="/goto_watch_video">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="#">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../goto_competitions_2">比赛题目</a></li>
+                        <li><a target="_blank" href="../go_to_download">数据集</a></li>
+                        <li><a target="_blank" href="../show_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_2">联系我们</a></li>
+
+				<li class="link newsHead" id="newsHead" style="display:none;">
+					<a href=""><span class="newsNum" id="newsNum"></span>
+						<div class="news-msg" id="news-msg">有新的消息</div>
+					</a>
+				</li>
+				<li id="login_logined" class="user" style="margin-left:100px;">
+					<div class="head">
+						<span style="display:none;">999</span>
+						<img src="../static/img/touxiang_1.png">
+						<p>{{ request.session.username }}</p>
+					</div>
+
+					<ul id="login_logined_stu" identityid="1">
+						<li><a href="">个人信息</a></li>
+						<li authstatus="4"><a href="">队伍信息</a></li>
+						<li authstatus="4"><a href="">上传结果</a></li>
+						<li class="quit"><a href="../welcome1">退出</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+    </div>
+    <div class="mid" style="height: auto;">
+
+        <pre style="margin-left: 200px;margin-right: 200px;">
+            <h1 style="margin-left: 100px;">用户协议</h1>
+    一、说明
+            深度学习系统在此特别提醒您，在注册成为用户之前，请认真阅读本《用户协议》（以下简称“协议”）， 确保您充分
+            理解本协议全部条款。请谨慎阅读本协议全部内容，除非您接受本协议所有条款，否则您无权注册、登录或使用本协议所
+            涉服务。如果您对本协议的任何条款表示异议，您可以选择不登录或注册、使用深度学习相应的任何功能及服务。您的登
+            录、注册或使用深度学习系统任何功能及服务的行为，均将视为您对本协议的接受，并同意接受本协议各项条款的约束。
+            本协议具有合同效力，双方应严格遵守。本协议内容包括协议正文及所有深度学习系统的各类规则。所有规则为协议不可
+            分割的一部分，与协议正文具有同等法律效力。用户在使用深度学习系统提供的各项服务的同时，承诺接受并遵守各项相
+            关规则的规定。深度学习系统有权根据需要不时地制定、修改本协议或各类规则，如本协议有任何变更，深度学习系统将
+            在网站上刊载公告，通知予用户。如用户不同意相关变更，可选择停止使用深度学习系统全部功能及服务。经修订的协议
+            及规则一经在深度学习网站公布后，立即自动生效。各类规则会在发布后生效，亦成为本协议的一部分。登录或继续使用
+            深度学习系统任何功能及服务将表示用户接受经修订的协议。除另行明确声明外，任何使深度学习系统功能及服务范围扩
+            大或功能增强的新内容均受本协议约束。用户应在注册之前认真阅读本用户协议，用户点击协议正本下方的“确认”按钮
+            并按照深度学习官方网站注册程序成功注册为用户，视为其同意并签署了本用户协议。
+    二、 定义
+            用户及用户注册：用户必须是具备完全民事行为能力的自然人。无民事行为能力人、限制民事行为能力人不应注册为深度
+            学习网站用户，其与深度学习系统之间的用户协议自始无效，若因您不具备主体资格，而导致的一切后果，由您及您的监
+            护人自行承担。一经发现，有权立即注销该用户，并追究其使用深度学习网站功能及服务的一切法律责任。用户注册是指
+            用户登录深度学习网站，并按要求填写相关信息，并确认同意履行相关用户协议的过程。用户因进行交易、获取有偿服务
+            或接触深度学习竞赛网服务器而发生的所有应纳税赋，以及一切硬件、软件、服务及其它方面的费用均由用户负责支付。
+            深度学习网站仅作为软件（电子）类学生、个人、院校、企业的服务平台。
+    三、 用户权利和义务
+            所有用户必须遵循：
+            （1）遵守所有使用网络服务的网络协议、规定、程序和惯例；
+            （2）不得使用深度学习系统从事违法活动；
+            （3）不得干扰或侵犯网站的正常运行和其他用户的正常使用；
+            （4）用户通过深度学习系统缴费的相关费用，只允许使用于相关的项目活动，不能用于其他目的；
+            同时用户承诺：
+            （1）不得利用深度学习系统制作、复制、查阅和传播下列信息：
+            -任何非法的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的、淫秽的信息资料；
+            -任何教唆他人进行违法犯罪行为的资料；
+            -不利于国内团结和社会安定的资料；
+            -任何不符合国家法律、法规规定的资料、信息；
+            -任何捏造或者歪曲事实，散布谣言，扰乱社会秩序的信息；
+
+            （2）不得未经许可而非法进入其它个人或组织电脑系统；
+            （3）未经允许，不得对深度学习网络平台中存储、处理或者传输的数据和应用程序进行删除、修改或者增加；
+            （4）不得故意制作、传播计算机病毒等破坏性程序；
+            （5）法律规定的其他义务。
+            如果用户的行为违背上述两款规定，本网站可以做出独立判断并有权立即取消用户资格。用户应对自己在深度学习网络教
+            育平台上的违法行为承担全部法律责任以及不利后果。
+            基于网络服务的特殊性，用户同意：
+            （1）在注册时按照注册提示提供准确用户名和密码以及详尽的个人资料；
+            （2）在个人的注册信息发生变化时，用户应及时更新自己的注册信息，保证其个人资料的详尽和准确。所有用户输入的个
+            人信息将被视作准确表明了用户的身份，并作为本网站提供所有服务的有效身份依据。如果用户提供的注册资料不合法、
+            不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且深度学习网站保留终止用户使用本平台各项服务
+            的权利；
+            （3）用户自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置；
+            （4）用户应自行负担因使用该接入方式而产生的上网电话费、上网信息费及教育信息费、用户的用户名、密码；
+            （5）用户一旦注册成功，成为深度学习网站的正式用户后，应当对自己的帐号、密码的安全性负全部责任，用户的密码只
+            能由用户本人保管；
+            （6）用户应对以其用户名进行的所有活动和事件负责。对于用户因帐号或密码泄露造成的各种损失，由用户自行承担，深
+            度学习网站不承担任何责任。用户发现任何非法使用用户帐号的情况，应立即通知官方；
+            （7）一个帐号只能由一个用户使用，不允许多个用户使用同一个帐号，如果用户违反此规定，深度学习竞赛网将有权将此
+            帐号作为无效处理并保留追究法律责任的权利；
+        </pre>
+
+            <input type="checkbox" value = "yes" id="check_box"style="margin-left: 600px;margin-top: 50px;margin-bottom: 50px;">我已阅读并同意此协议
+            <button id="next_page">下一步</button>
+
+    </div>
+
+
+    <script type="text/javascript" src="/static/jquery-3.3.1.min.js"></script>
+    <script></script>
+    <script type="text/javascript">
+        $("document").ready(function (){
+            $("#next_page").attr('disabled',"disabled");
+        });
+
+        $("#check_box").click(function () {
+            if($("#check_box").prop('checked') == true){
+                $("#next_page").attr('disabled',false);
+            }
+        });
+        
+        $("#next_page").click(function () {
+            //$("#next_page").attr(href,"../to_sign_uo_2")
+            window.location.href="../goto_sign_up_2";
+        });
+
+
+    </script>
+
+<div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+</body>
+</html>

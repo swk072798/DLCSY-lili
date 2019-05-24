@@ -1,0 +1,36 @@
+        .no_changerow {
+			white-space: nowrap;
+		}
+
+		.lastdiv {
+			margin-top: 50px;
+		}
+
+		.lastdiv1 {
+			border: 1px solid #0088CC;
+			margin-right: 10px;
+			height: 100%;
+		}
+
+		.lastdiv2 {
+			border: 1px solid #0088CC;
+			margin-left: 10px;
+			float: right;
+		}
+
+		h2 {
+			color: #003BB3;
+		}
+
+		li {
+			list-style-type: none;
+			margin-right: 10px;
+		}
+
+		.li_title {
+			margin-left: 50px;
+		}
+
+		ul {
+			display: inline;
+		}

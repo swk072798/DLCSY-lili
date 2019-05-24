@@ -1,0 +1,220 @@
+
+<html  class="ng-scope">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			@charset "UTF-8";
+
+			[ng\:cloak],
+			[ng-cloak],
+			[data-ng-cloak],
+			[x-ng-cloak],
+			.ng-cloak,
+			.x-ng-cloak,
+			.ng-hide:not(.ng-hide-animate) {
+				display: none !important;
+			}
+
+			ng\:form {
+				display: block;
+			}
+		</style>
+
+		<script type="text/javascript">
+
+		</script>
+
+
+
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<title>辅导资料</title>
+
+		<link rel="shortcut icon" href="../static/img/icon-1.png" type="image/x-icon">
+
+
+		<link rel="stylesheet" type="text/css" href="./static/style_Tutorials/basic.css">
+		<link rel="stylesheet" type="text/css" href="./static/style_Tutorials/news.css">
+		<link rel="stylesheet" type="text/css" href="./static/style_Tutorials/login_sub.css">
+
+		<script src="./static/style_Tutorials/jquery-1.9.1.min.js.下载"></script>
+
+		<link href="chrome-extension://iihgchombimnadbbapofogflgbifgbgl/content/css/jlzs.css" rel="stylesheet" type="text/css">
+		<link href="chrome-extension://iihgchombimnadbbapofogflgbifgbgl/content/css/select.css" rel="stylesheet" type="text/css">
+		<link href="chrome-extension://iihgchombimnadbbapofogflgbifgbgl/content/css/input.css" rel="stylesheet" type="text/css">
+		<link href="chrome-extension://iihgchombimnadbbapofogflgbifgbgl/content/css/checkbox.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+
+		<link rel="stylesheet" type="text/css" href="./static/style_Tutorials/login_sub.css">
+		<script src="./static/style_Tutorials/index_top.js.下载"></script>
+
+		<div class="navigation">
+			<a class="home" href="welcome1"></a>
+			<ul class="menu">
+				<li class="link"><a href="welcome1">深度学习竞赛</a></li>
+				<li class="link"><a target="_blank" href="I_N/goto_details_1/625">本届通知</a></li>
+				<li class="link">
+					<a href="javascript:;">关于大赛</a>
+					<ul>
+						<li><a target="_blank" href="I_N/goto_news_1">大赛新闻</a></li>
+                      	<li><a target="_blank" href="I_N/goto_Info_1">大赛通知</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_1/233">大赛章程</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_1/622">奖项设置</a></li>
+                      	<li><a target="_blank" href="I_N/goto_details_1/623">竞赛科目</a></li>
+
+                      	<!--<li><a target="_blank" href="../I_N/goto_details_1/636">团队赛通知</a></li>-->
+					</ul>
+				</li>
+				<li class="link">
+                    <a href="javascript:;">学习相关</a>
+                    <ul>
+					    <li><a href="/goto_download_study_1">辅导资料</a></li>
+                        <li><a href="../login">视频资料</a></li>
+                    </ul>
+				</li>
+				<li class="link">
+                    <a target="_blank" href="javascript:void(0)">比赛</a>
+                    <ul>
+                        <li><a target="_blank" href="../goto_competitions_1">比赛题目</a></li>
+                         <li><a target="_blank" id = "down_data">数据集</a></li>
+                        <li><a target="_blank" id="join_team">参加队伍</a></li>
+                    </ul>
+                </li>
+
+				<li class="link"><a target="_blank" href="../contact_me_1">联系我们</a></li>
+
+				<li class="link newsHead" id="newsHead" style="display:none;">
+					<a href=""><span class="newsNum" id="newsNum"></span>
+						<div class="news-msg" id="news-msg">有新的消息</div>
+					</a>
+				</li>
+				 <li id="login_normal" class="account" style="margin-left: 100px;">
+
+					<a href="/../login" >登录</a>
+					<a href="/../register">注册</a>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="lq-news">
+			<div class="top-line"></div>
+			<div class=" news-detail" id="detail" style="width:1160px">
+				<div class="detail-t">
+					<p class="tag" style="font-size: 20px;">辅导资料</p>
+					<!--<p class="p2">辅导资料</p>-->
+					<!--<p class="p3">2019-03-19</p>-->
+				</div>
+				<div class="content">
+					<div class="news-text">
+						<p style="text-align: center; line-height: 1.5em; margin-bottom: 5px;"><br></p>
+						<table style="width:100%">
+							<tbody>
+								<tr class="firstRow">
+									<td width="358" valign="top" style="word-break: break-all;">
+
+										<p><strong style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px; text-align: center; white-space: normal;"><span
+												 style="background-color: rgb(255, 255, 255);">学习网站</span></strong></p>
+										<p><br></p>
+
+
+										{% for foo in study_info_1 %}
+                                            <p style="white-space: normal; line-height: normal;"><span style="line-height: 2em; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px; background-color: rgb(0, 176, 240);">{{ foo.id }}</span><span
+                                                 style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>&nbsp;&nbsp;</strong></span>
+                                                 <span
+                                                 style="line-height: 2em; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>{{ foo.title }}&nbsp;</strong></span></p>
+                                            <p style="white-space: normal; line-height: 2em;">
+                                                &nbsp;<a href="http://blog.csdn.net/zouxy09" target="_self"
+                                                 style="color: rgb(0, 112, 192);">{{ foo.url }}</a><br></p>
+                                            <p style="white-space: normal; line-height: 1.5em;"><br></p>
+                                        {% endfor %}
+
+
+									</td>
+
+
+									<td valign="top" colspan="1" rowspan="1" width="361" style="word-break: break-all;">
+										<p><strong style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px; text-align: center; white-space: normal;"><span
+												 style="background-color: rgb(255, 255, 255);">论文和书籍</span></strong></p>
+									<br />
+
+                                        {% for foo2 in study_info_2 %}
+                                            <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal; line-height: 1.75em;"><span
+                                                 style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px; background-color: rgb(0, 176, 240);">{{ foo2.id }}</span><span
+                                                 style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;">&nbsp;{{ foo2.title }}</span></p>
+                                            <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal; line-height: 1.75em;">
+
+                                                <a href="{{ foo2.url }}"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;">{{ foo2.url }}</span></a></p>
+
+                                            <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal; line-height: 1.75em;"><br></p>
+										{% endfor %}
+
+
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<p style="line-height: 1.5em; margin-bottom: 5px; text-align: center;"><br><br></p>
+						<p style="text-align: left; line-height: 2em; margin-bottom: 5px;"><br></p>
+						<p style="text-align: left; line-height: 1.5em; margin-bottom: 5px;"><br></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		 <div class="footer">
+			<div class="bg1">
+				<div class="clearfix wrap">
+					<div class="item item1">
+						<img src="../static/img/DL-logo2.png">
+						<div><a href="" target="_blank">关于我们</a></div>
+						<div><a href="" target="_blank">用户协议</a></div>
+
+					</div>
+					<div class="item item2">
+						<p class="p1">支持单位</p>
+						<p class="p2">主办单位：</p>
+						<p class="p2">西北农林科技大学信息化部人才交流中心</p>
+						<p class="p2">技术支持：</p>
+						<p class="p2">信息工程学院</p>
+					</div>
+					<div class="item item3">
+						<p class="p1">联系我们</p>
+						<p class="p2">地址：陕西省杨凌区西北农林科技大学信息工程学院 </p>
+						<p class="p2">电话：XXX-XXXX    传真：XXX-XXXXXXX </p>
+						<p class="p2">Email：xxxxxx@xxxxx</p>
+
+						<p class="p2">商务合作：xxx-xxxxxxx</p>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<script src="./static/style_Tutorials/z_baidu_statistics.js.下载" language="JavaScript"></script>
+
+
+        <script>
+                        $("#down_data").click(function () {
+                            var r = confirm("您需要先登录才能下载");
+                            if(r == true){
+                                window.location.href = "../login"
+                            }
+                        });
+                        $("#join_team").click(function () {
+                            var r = confirm("您需要先登录才能参加队伍");
+                            if(r == true){
+                                window.location.href = "../login"
+                            }
+                        });
+                    </script>
+
+
+
+
+	</body>
+</html>
