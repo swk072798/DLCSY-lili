@@ -216,6 +216,13 @@
 
                         </table>
 						</div>
+
+                    <script>
+                        var is_sign = "{{ request.session.is_sign }}";
+                        if(is_sign == "0"){
+                            $("#leftbar_address").hide();
+                        }
+                    </script>
 						<div class="block-5"></div>
 						<div class="showMain">
                         <div id="toApplybtn" class="center mt25">

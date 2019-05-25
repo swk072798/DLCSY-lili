@@ -47,7 +47,7 @@
                     <a href="javascript:;">学习相关</a>
                     <ul>
 					    <li><a href="/goto_download_study_1">辅导资料</a></li>
-                        <li id="video"><a href="../login">视频资料</a></li>
+                        <li ><a id="video">视频资料</a></li>
                     </ul>
 				</li>
 				<li class="link">
@@ -79,7 +79,11 @@
 
 <script>
 	$("#video").click(function () {
-        alert("您需要先登录才能观看视频！！！");
+        var r = confirm("您需要先登录才能观看视频！！！");
+        if(r == true){
+            console.log("aaaa111");
+            window.location.href = "/login";
+        }
     });
 
 </script>
@@ -214,10 +218,6 @@
 
 		</div>
 
-
-						<!-- 新增推广 -->
-						<script src="../static/style_Main/public.js(1).下载"></script>
-						<script src="../static/style_Main/dialog.js.下载"></script>
 
 
 						<script src="../static/style_Main/jquery.SuperSlide.2.1.1.js.下载"></script>

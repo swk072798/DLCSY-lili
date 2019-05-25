@@ -290,6 +290,12 @@
                             }
                         }
                         </script>
+                            <script>
+                                var is_sign = "{{ request.session.is_sign }}";
+                                if(is_sign == "0"){
+                                    $("#leftbar_address").hide();
+                                }
+                            </script>
 
 
 							<!--<form enctype="multipart/form-data" action="uploadfile_A" method="post">

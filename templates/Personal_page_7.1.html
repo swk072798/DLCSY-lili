@@ -230,7 +230,12 @@
 					</div>
 
 				</div>
-
+        <script>
+            var is_sign = "{{ request.session.is_sign }}";
+            if(is_sign == "0"){
+                $("#leftbar_address").hide();
+            }
+        </script>
 
 
 			</div>
