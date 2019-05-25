@@ -93,7 +93,7 @@ def upload_file_A(request):
             return HttpResponse("no files for upload!")
         user_id = request.session['user_id']
         par_no = sign_up_models.participant.objects.get(user_id=user_id)
-
+        submission = join_team_models.team_info.objects.get(team_no=int(par_no.team_id))
         upload_path= "static\\participants\\"+str(par_no.event_id)+"\\A\\"+str(par_no.team_id)
         if(os.path.exists(upload_path)):
             # print("111")
@@ -103,6 +103,8 @@ def upload_file_A(request):
             for chunk in myFile.chunks():      # 分块写入文件
                 destination.write(chunk)
             destination.close()
+            submission.submission_A += 1
+            submission.save()
             # return render(request,"Personal_page_3.html")
             return redirect("../get_score_A")
         else:
@@ -114,6 +116,8 @@ def upload_file_A(request):
             for chunk in myFile.chunks():  # 分块写入文件
                 destination.write(chunk)
             destination.close()
+            submission.submission_A += 1
+            submission.save()
             # return render(request, "Personal_page_3.html")
             return redirect("../get_score_A")
 
@@ -271,7 +275,7 @@ def run_file_B(request):
         # submission = join_team_models.team_info.objects.get(team_no=par_no.team_id).submission
         # if(int(submission)<3):
         your_score_percent = str(your_score * 100) + "%"
-        file_path = "./static/score_record/" + str(par_no.event_id) + ".csv"
+        file_path = "./static/score_record/" + str(par_no.event_id) + "B.csv"
         info = [str(par_no.team_id), str(your_score)]
         csv_file = open(file_path,'w+',newline='')
         if(info in file_list):

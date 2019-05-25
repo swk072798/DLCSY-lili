@@ -223,6 +223,7 @@ def sub_sign_up(request):
             user_id=user,
             info_content=info
         )
+        request.session['is_sign'] = '1'
         return render(request, "Logined_Main.html",
                       {'news': news, 'announce': announce,'sign_up_success':sign_up_success})
     else:
@@ -305,7 +306,7 @@ def personal_page_6(request):
     user_id = request.session['user_id']
     a = models.participant.objects.filter(user_id=user_id)
     if(a.count() == 0):
-        return render(request, "Personal_page_6.html")
+        return render(request, "competitions_2.html")
     else:
         return render(request, "Personal_page_6.html",{'a':a[0]})
 

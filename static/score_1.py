@@ -72,5 +72,3 @@ def caculate_score(submitfile,listfile):
 
 if __name__ == '__main__':
     print(caculate_score())
-    # caculate_score("./participants/7/submit.csv","./standard_answer/1/list.csv")
-    # print(caculate_score("static\\participants\\7\\submit.csv"))

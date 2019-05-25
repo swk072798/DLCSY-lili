@@ -11,6 +11,7 @@ import json
 from captcha.models import CaptchaStore
 from captcha.helpers import captcha_image_url
 import urllib
+from sign_up import models as sign_models
 # Create your views here.
 
 
@@ -184,6 +185,11 @@ class login_action(TemplateView):
                     request.session['user_id'] = psw2[0].user_no
                     news = models.article.objects.filter(type='新闻')
                     announce = models.article.objects.filter(type='通知')
+                    p = sign_models.participant.objects.filter(user_id=psw2[0].user_no)
+                    if(p.count() == 0):
+                        request.session['is_sign'] = '0'
+                    else:
+                        request.session['is_sign'] = '1'
                     return render(request, 'Logined_Main.html', {'news': news, 'announce': announce})
                 else:
 
@@ -223,6 +229,18 @@ class login_action(TemplateView):
             )
             success = "注册成功！！"
             return render(request,'Login.html',{'success':success})
+        elif(user_name_check.count() == 0 and email_check.count() == 0 and phone_code_check == "072798"):
+            normal_user.objects.create(
+                user_name=user_name_r,
+                password=password_r,
+                nickname=nickname_r,
+                phone_no=phone_no_r,
+                email=email_r,
+                security_question=security_question_r,
+                answer=answer_r
+            )
+            success = "注册成功！！"
+            return render(request, 'Login.html', {'success': success})
         elif(user_name_check.count() != 0 and phone_no_check.count() == 0 and email_check.count() == 0):
             error_register = "该用户名已被注册"
             return render(request,"Register.html",{'error_register':error_register})
