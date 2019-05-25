@@ -101,12 +101,12 @@
         <form method=post action="sub_sign_up" id="f1">
             {% csrf_token %}
             <p style="font-size: 30px">完善报名信息</p>
-            真实姓名：<input type = "text" name="real_name"><br><br><br>
+            真实姓名：<input type = "text" name="real_name" AUTOCOMPLETE="off"><br><br><br>
             性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="1">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="2">女<br><br><br><br>
-            身份证号：<input type="text" name="id" id="identy"><label id="l_1"></label> <br><br><br>
+            身份证号：<input type="text" name="id" id="identy" AUTOCOMPLETE="off"><label id="l_1"></label> <br><br><br>
             家庭住址：          省    份：<select id="province" name="province" runat="server" onchange="selectprovince(this);" style=" width:95px;"></select>
                                 城    市：<select id="city" name="city" runat="server" style=" width:95px;"></select><br><br>
-                                详细地址：<input type="text" name = "address_details"><br><br><br><br><br>
+                                详细地址：<input type="text" name = "address_details" AUTOCOMPLETE="off"><br><br><br><br><br>
             参赛项目：<!--<input type="text" name="event">（填写题目编号）<br><br><br><br>-->
             <!--<select name = event>
                 <option value="1">No1.图像-发现超新星</option>

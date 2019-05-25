@@ -147,7 +147,7 @@
 					<ul activeleft="myauth" ng-controller="indexLeftUserCtrl"
 					 class="ng-scope">
 
-						<li id="leftbar_myauth" class="ng-scope "><a href="javascript:void(0)"><img
+						<li id="leftbar_myauth" class="ng-scope "><a href="/goto_personal_1"><img
 								 src="../static/style_Personal/icon-safe.png">个人信息</a></li>
 						<li id="leftbar_mydasai" certified="" style="" class="ng-scope"><a href="goto_personal_2"><img
 								 src="../static/style_Personal/icon-start.png">队伍信息</a></li>
@@ -202,7 +202,7 @@
                                 您当前的地址为：<label id="now_address">{{ a.address }}</label>     <br><br><br>
                                 省    份：<select id="province" name="province" runat="server" onchange="selectprovince(this);" style=" width:95px;"></select>
                                 城    市：<select id="city" name="city" runat="server" style=" width:95px;"></select><br><br>
-                                详细地址：<input type="text" name = "address_details"><br><br>
+                                详细地址：<input type="text" name = "address_details" AUTOCOMPLETE="off"><br><br>
                                 <input type="submit" value="保存">
                             </form>
 						</div>

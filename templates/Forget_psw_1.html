@@ -106,16 +106,16 @@
 							<p class="title">忘记密码（第一步）</p>
 							<p><span>您的账号：</span>
 								<!--<ss ng-bind="auth.identityRealname" class="ng-binding">{{team_info.team_no}}</ss>-->
-                                <input type="text" name = "username_f">
+                                <input type="text" name = "username_f" AUTOCOMPLETE="off">
 							</p>
 							<p><span>您的预留手机号：</span>
 								<!--<ss ng-bind="auth.identitySexStr" class="ng-binding">{{team_info.team_name}}</ss>-->
-                                <input type="text" name = "phone_f">
+                                <input type="text" name = "phone_f" AUTOCOMPLETE="off">
 							</p>
 							<!-- ngIf: auth.identityNation -->
 							<p ng-if="auth.identityNation " class="ng-scope"><span>您的邮箱：</span>
 								<!--<ss ng-bind="auth.identityNation" class="ng-binding">{{team_info.captain}}</ss>-->
-                                <input type="text" name="email_f">
+                                <input type="text" name="email_f" AUTOCOMPLETE="off">
 							</p><!-- end ngIf: auth.identityNation -->
 							<!-- ngIf: auth.identityOriginPlace -->
 							<input type="button" value="下一步" id = "next" style="margin-left: 200px;">

@@ -108,12 +108,12 @@
 							</p>
 							<p><span>您的答案是：</span>
 								<!--<ss ng-bind="auth.identitySexStr" class="ng-binding">{{team_info.team_name}}</ss>-->
-                                <input type="text" name = "answer_f">
+                                <input type="text" name = "answer_f" AUTOCOMPLETE="off">
 							</p>
 							<!-- ngIf: auth.identityNation -->
 							<p ng-if="auth.identityNation " class="ng-scope"><span>新的密码：</span>
 								<!--<ss ng-bind="auth.identityNation" class="ng-binding">{{team_info.captain}}</ss>-->
-                                <input type="text" name="new_psw">
+                                <input type="text" name="new_psw" AUTOCOMPLETE="off">
 							</p><!-- end ngIf: auth.identityNation -->
 							<!-- ngIf: auth.identityOriginPlace -->
 							<input type="submit" value="重置密码" id = "reset_psw"  style="margin-left: 200px">

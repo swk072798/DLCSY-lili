@@ -130,28 +130,28 @@
 			<form action="register_sub" method="post" class="form2">
                 {% csrf_token %}
 				<h2 style="margin-left: 20px;margin-bottom: 30px;margin-top: 50px;">注册账号</h2>
-				账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" name = "user_name_r" id = "username"/><label id = "l_0"></label><br /><br />
-				密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="text" name = "password_r" id = "password"/><br /><br />
-				重复密码：<input type="text" name = "repeat_password" id = "repeat_password"/><label id = "l_1"></label> <br /><br />
-				昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" name = "nickname_r" id="nickname"/><label id="l_2"></label><br /><br />
+				账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text" name = "user_name_r" id = "username" AUTOCOMPLETE="off"/><label id = "l_0"></label><br /><br />
+				密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="text" name = "password_r" id = "password" AUTOCOMPLETE="off"/><br /><br />
+				重复密码：<input type="text" name = "repeat_password" id = "repeat_password" AUTOCOMPLETE="off"/><label id = "l_1"></label> <br /><br />
+				昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" name = "nickname_r" id="nickname" AUTOCOMPLETE="off"/><label id="l_2"></label><br /><br />
 
 					手机号码：
-                   <input type="text" placeholder="11位数的手机号码" id="mobile" name="mobile"/>
+                   <input type="text" placeholder="11位数的手机号码" id="mobile" name="mobile" AUTOCOMPLETE="off"/>
                    <!--<span class="error_tip">提示信息</span>-->
 					<label id="l_3"></label>
 				<br><br>
 					<!--<label style="color: #000000">验证码:&nbsp;&nbsp;&nbsp;&nbsp;</label>-->
 					验证码：&nbsp;&nbsp;&nbsp;&nbsp;
-                   <input type="text" name="code" placeholder="请输入手机验证码" style="width: 140px;">
+                   <input type="text" name="code" placeholder="请输入手机验证码" style="width: 140px;" AUTOCOMPLETE="off">
                    &nbsp;&nbsp;
                    <input type="button" value=" 获取验证码" id="zphone" style="width: 100px;margin-left: 10px">
 					<br><br>
 
 
 
-				邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" name = "email_r" id="email"/><label id="l_4"></label><br /><br />
-				密保问题：<input type="text" name = "security_question_r" id="question"/><label>*(重置密码会用到)</label><br /><br />
-				答&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;案：<input type="text" name = "answer_r" id="answer"/><br /><br />
+				邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="text" name = "email_r" id="email" AUTOCOMPLETE="off"/><label id="l_4"></label><br /><br />
+				密保问题：<input type="text" name = "security_question_r" id="question" AUTOCOMPLETE="off"/><label>*(重置密码会用到)</label><br /><br />
+				答&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;案：<input type="text" name = "answer_r" id="answer" AUTOCOMPLETE="off"/><br /><br />
 
 				<input type="button" name="" id="handup" value="注册" style="padding: 10px;width: 80px;height: 35px;margin-left: 100px;"/>
 			</form>

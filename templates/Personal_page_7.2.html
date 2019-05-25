@@ -145,7 +145,7 @@
 					<ul activeleft="myauth" ng-controller="indexLeftUserCtrl"
 					 class="ng-scope">
 
-						<li id="leftbar_myauth" class="ng-scope active"><a href="javascript:void(0)"><img
+						<li id="leftbar_myauth" class="ng-scope active"><a href="/goto_personal_1"><img
 								 src="../static/style_Personal/icon-safe.png">个人信息</a></li>
 						<li id="leftbar_mydasai" certified="" style="" class="ng-scope"><a href="goto_personal_2"><img
 								 src="../static/style_Personal/icon-start.png">队伍信息</a></li>
@@ -201,8 +201,8 @@
 						<div class="showMain">
                             <form action="../change_que" method="post">
                                 {% csrf_token %}
-                                新的密保问题：<input type="text" id="new_question" name = "new_question"><br><br>
-                                你&nbsp;的&nbsp;答&nbsp;案&nbsp;&nbsp;：&nbsp;&nbsp;<input type="text" id="new_answer" name = "new_answer"><br><br>
+                                新的密保问题：<input type="text" id="new_question" name = "new_question" AUTOCOMPLETE="off"><br><br>
+                                你&nbsp;的&nbsp;答&nbsp;案&nbsp;&nbsp;：&nbsp;&nbsp;<input type="text" id="new_answer" name = "new_answer" AUTOCOMPLETE="off"><br><br>
                                 <input type="button" id="change_que" value="修改">
                             </form>
 

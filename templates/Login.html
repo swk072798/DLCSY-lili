@@ -57,16 +57,16 @@
                                 {% csrf_token %}
                                 <br><br>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								账号：<input type="text" name = "username""/>
+								账号：<input type="text" name = "username" AUTOCOMPLETE="off"/>
                                 <br /><br />
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								密码：<input type="text" name="password"/><br /><br />
-								<input type="text" name='captcha' class="form-control" placeholder="请输入验证码" required style="width: 45%;display: inline-block;margin-left: 26%;margin-bottom: 3%"><br>
+								密码：<input type="text" name="password" AUTOCOMPLETE="off"/><br /><br />
+								<input type="text" name='captcha' class="form-control" placeholder="请输入验证码" required style="width: 45%;display: inline-block;margin-left: 26%;margin-bottom: 3%" AUTOCOMPLETE="off"><br>
 								<a href="#" class="captcha" style="margin-left: 30%;"><img src="{{captcha.image_url}}" alt="点击换一张" id="id_captcha"></a>
 								<input value="{{captcha.hashkey}}" name="hashkey" type="hidden" id="id_captcha_0">
 
 								<p style="color:red;margin-left: 30%;margin-top: 3%">{{error_1}}</p>
-								<div align="center"><input type="submit" id="" value="登录" class="submit1"/></div><br>
+								<div align="center"><input type="submit" id="" value="登录" class="submit1" /></div><br>
 
 								<p align="center" id="forget"><a href="../../goto_forget_psw">忘记密码？</a></p>
 								<p align="center" id="register"><a href="register">注册</a></p>
@@ -79,8 +79,8 @@
 							<form class="form1" action="check_code" method="post">
                                 {% csrf_token %}
                                 <br><br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;箱：<input type="text" name="email" id="email"/><br /><br />
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码：<input type="text" name="code"/> <br /><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;箱：<input type="text" name="email" id="email" AUTOCOMPLETE="off"/><br /><br />
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码：<input type="text" name="code" AUTOCOMPLETE="off"/> <br /><br>
                                 <div align="center"><button type="button" class="btn btn-default btn-xs" onclick="ajax_fun()">获取验证码</button></div><br />
 {#                                <a href="send_message">发送验证码</a>#}
                                 <div align="center"><input type="submit" name="" id="" value="登录" class = "submit1"/></div><br>
