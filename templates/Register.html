@@ -291,7 +291,8 @@
             });
 
             $("#mobile").blur(function () {
-                var phonereg = /^[\d]{5,20}$/;
+                //var phonereg = /^[\d]{5,20}$/;
+                var phonereg = /^1[345678]\d{9}$/;
                 if( !phonereg.test($("#mobile").val()) ){
                     $("#l_3").text("请输入正确格式的手机号");
                     document.getElementById('zphone').disabled = true;

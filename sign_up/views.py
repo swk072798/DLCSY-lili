@@ -401,16 +401,4 @@ def page2(request):
         status = alipay.verify(params, sign)
         print('GET验证', status)
 
-        # user = Lmodels.normal_user.objects.get(user_no=user_id)
-        # info_1 = "账号 " + user.user_name + " 您已完成报名付款，祝您比赛顺利！！"
-        # info_models.system_info.objects.create(
-        #     user_id=user,
-        #     info_content=info_1
-        # )
-        #
-        # models.pay_list.objects.create(
-        #  user_id=user_id,
-        #     pay_money=300
-        # )
-
         return redirect("../../goto_sign_up_3")
