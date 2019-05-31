@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from Info_news import models
-
+from sign_up import models as sign_up_models
 # Create your views here.
 
 def goto_news_1(request):
@@ -35,4 +35,10 @@ def goto_details_2(request,news_id):
     content = models.article.objects.get(id=id).content
     print(content)
     date = models.article.objects.get(id=id).ar_time
-    return render(request, "Consititution_details_2.html", {'title':title, 'content':content, 'date':date})
+    TestA_open_date = ""
+    TestB_open_date = ""
+    if(news_id == 625):
+        TestA_open_date = sign_up_models.competition_topic.objects.get(com_topic_id=1).TestA_open_time
+        TestB_open_date = sign_up_models.competition_topic.objects.get(com_topic_id=1).TestB_open_time
+    return render(request, "Consititution_details_2.html", {'title':title, 'content':content, 'date':date,
+                                                            'TestA_open_date':TestA_open_date,'TestB_open_date':TestB_open_date})

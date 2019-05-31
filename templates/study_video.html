@@ -219,14 +219,13 @@
             $(document).ready(function () {
                 var now_video = "{{ now_play | safe }}";
 
-                //console.log(now_video+"    aaaaaaa");
                 if(now_video != ""){
                     console.log(now_video);
 
                     $("#video_play").append('<iframe id="bili_video" src="{{now_play | safe}}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px;height: 480px;margin:50px;"> </iframe>')
                 }
                 else{
-                    console.log("hahahaha");
+
                     $("#video_play").append('<iframe id="bili_video" src="//player.bilibili.com/player.html?aid=4050443&cid=6534573&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 640px;height: 480px;margin:50px;"> </iframe>')
                 }
             }

@@ -115,7 +115,11 @@ def show_details_2(request,topic_id):
         file_list_B[i].insert(2, t.team_name)
         # file_list[i].insert(3,p.team_id)
         list_2.append(file_list_B[i])
-    return render(request, "topic_details_2.html", {'com_topic':com_topic,'list_A':list_1,'list_B':list_2})
+    print(com_topic.TestA_open_time)
+    Atime = str(com_topic.TestA_open_time)
+    Btime = str(com_topic.TestB_open_time)
+    return render(request, "topic_details_2.html", {'com_topic':com_topic,'list_A':list_1,'list_B':list_2,
+                                                    'A_open_time':Atime,'B_open_time':Btime})
     # return redirect("../look_score_B")
 
 def show_details_1(request,topic_id):
@@ -125,10 +129,21 @@ def show_details_1(request,topic_id):
 
 
 def goto_competitions_1(request):
-    return render(request, "competitions_1.html")
+    end_date_1 = models.competition_topic.objects.get(com_topic_id=1).com_end_time
+    end_date_2 = models.competition_topic.objects.get(com_topic_id=2).com_end_time
+    end_date_3 = models.competition_topic.objects.get(com_topic_id=3).com_end_time
+    end_date_4 = models.competition_topic.objects.get(com_topic_id=4).com_end_time
+
+    return render(request, "competitions_1.html",
+                  {'time_1': end_date_1, 'time_2': end_date_2, 'time_3': end_date_3, 'time_4': end_date_4})
 
 def goto_competitions_2(request):
-    return render(request, "competitions_2.html")
+    end_date_1 = models.competition_topic.objects.get(com_topic_id=1).com_end_time
+    end_date_2 = models.competition_topic.objects.get(com_topic_id=2).com_end_time
+    end_date_3 = models.competition_topic.objects.get(com_topic_id=3).com_end_time
+    end_date_4 = models.competition_topic.objects.get(com_topic_id=4).com_end_time
+
+    return render(request, "competitions_2.html",{'time_1':end_date_1,'time_2':end_date_2,'time_3':end_date_3,'time_4':end_date_4})
 
 # def show_topic(request):
 #     com_name = models.competition_topic.objects.all()

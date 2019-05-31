@@ -92,7 +92,7 @@
 					<p class="p3">{{ date }}
 					 </p>
                     <div class="content">
-                        <div class="news-text">
+                        <div class="news-text" id="news-text">
                             {{ content }}
                         </div>
                     </div>
@@ -143,7 +143,46 @@
                              if(split_urls[split_urls.length-1] == "625"){
                                  $("#dasai").removeClass("act");
                                  $("#tongzhi").addClass("act");
+                                 /*var article_content="{{ content | safe}}";
+                                 console.log(article_content);
+
+                                 var TestA_open_date = "{{ TestA_open_date | safe }}";
+                                 var arr_1 = TestA_open_date.split("-");
+                                 console.log(arr_1);
+                                 arr_1.splice(1,0,"年");
+                                 console.log(arr_1);
+                                 arr_1.splice(3,0,"月");
+                                 arr_1.splice(5,0,"日");
+                                 console.log(arr_1);
+                                 var TestA_open_date_1 = "";
+                                 for(var i = 0;i<arr_1.length;i++){
+                                     TestA_open_date_1 += arr_1[i];
+                                 }
+                                 console.log(TestA_open_date_1);
+
+
+                                 var TestB_open_date = "{{ TestB_open_date | safe }}";
+                                 var arr_2 = TestB_open_date.split("-");
+                                 console.log(arr_2);
+                                 arr_2.splice(1,0,"年");
+                                 console.log(arr_1);
+                                 arr_2.splice(3,0,"月");
+                                 arr_2.splice(5,0,"日");
+                                 console.log(arr_2);
+                                 var TestB_open_date_1 = "";
+                                 for(var i = 0;i<arr_1.length;i++){
+                                     TestB_open_date_1 += arr_2[i];
+                                 }
+                                 console.log(TestB_open_date_1);
+                                 var TestB_open_date = "{{ TestB_open_date | safe }}";
+                                 var new_content_1 = article_content.replace(/2019年09月18日/,TestA_open_date_1);
+                                 var new_content_2 = new_content_1.replace(/2019年10月08日 15:00/,TestB_open_date_1)
+                                 console.log(new_content_2);
+                                 var new_content = article_content.slice(0,98)+'<br>'+article_content.slice(98,146)+'<br>'+article_content.slice(146,209)
+                                                    +'<br>'+article_content.slice(209,217)+'<br>'+article_content.slice(217,243)+'<br>'+article_content.slice(243,262);
+                                 $("#news-text").append(new_content);*/
                              }
+                            
                          });
 </script>
 
