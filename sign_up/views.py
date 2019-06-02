@@ -342,15 +342,16 @@ def save_address(request):
 
 def ali():
     # 沙箱环境地址：https://openhome.alipay.com/platform/appDaily.htm?tab=info
-    app_id = "2016092500595639"
+
+    app_id = models.app_id.objects.get(id=1).app_id
 
     # POST请求，用于最后的检测
     notify_url = "http://127.0.0.1:8000/back_urls/"
-    # notify_url = "http://www.wupeiqi.com:8804/page2/"
+
 
     # GET请求，用于页面的跳转展示
     return_url ="http://127.0.0.1:8000/back_urls/"
-    # return_url = "http://www.wupeiqi.com:8804/page2/"
+
 
     merchant_private_key_path = "static/RSA_KEY/app_private_2048.txt"
     alipay_public_key_path = "static/RSA_KEY/alipay_public_2048.txt"
@@ -360,7 +361,7 @@ def ali():
         app_notify_url=notify_url,
         return_url=return_url,
         app_private_key_path=merchant_private_key_path,
-        alipay_public_key_path=alipay_public_key_path,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥
+        alipay_public_key_path=alipay_public_key_path,  # 支付宝的公钥，验证支付宝回传消息使用
         debug=True,  # 默认False,
     )
     return alipay

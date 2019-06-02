@@ -35,3 +35,7 @@ class pay_list(models.Model):
     user_id = models.OneToOneField("login.normal_user",on_delete=models.CASCADE)
     pay_money = models.IntegerField()
     set_date = models.DateTimeField(auto_now_add=True)
+
+class app_id(models.Model):
+    id = models.AutoField(primary_key=True)
+    app_id = models.CharField(max_length=16)
