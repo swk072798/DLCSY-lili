@@ -93,33 +93,38 @@ def upload_file_A(request):
             return HttpResponse("no files for upload!")
         user_id = request.session['user_id']
         par_no = sign_up_models.participant.objects.get(user_id=user_id)
+        max_submission_A = sign_up_models.competition_topic.objects.get(
+            com_topic_id=par_no.event_id).TestA_max_upload_times
         submission = join_team_models.team_info.objects.get(team_no=int(par_no.team_id))
         upload_path= "static\\participants\\"+str(par_no.event_id)+"\\A\\"+str(par_no.team_id)
-        if(os.path.exists(upload_path)):
-            # print("111")
-            destination = open(os.path.join(upload_path,myFile.name),'wb+')
-            print(myFile.name)
-            # 打开特定的文件进行二进制的写操作
-            for chunk in myFile.chunks():      # 分块写入文件
-                destination.write(chunk)
-            destination.close()
-            submission.submission_A += 1
-            submission.save()
-            # return render(request,"Personal_page_3.html")
-            return redirect("../get_score_A")
+        if(max_submission_A == -1 or submission.submission_B <max_submission_A):
+            if(os.path.exists(upload_path)):
+                print("111")
+                destination = open(os.path.join(upload_path,myFile.name),'wb+')
+                print(myFile.name)
+                # 打开特定的文件进行二进制的写操作
+                for chunk in myFile.chunks():      # 分块写入文件
+                    destination.write(chunk)
+                destination.close()
+                submission.submission_A += 1
+                submission.save()
+                # return render(request,"Personal_page_3.html")
+                return redirect("../get_score_A")
+            else:
+                print("222")
+                os.mkdir(upload_path)
+                destination = open(os.path.join(upload_path, myFile.name), 'wb+')
+                print(myFile.name)
+                # 打开特定的文件进行二进制的写操作
+                for chunk in myFile.chunks():  # 分块写入文件
+                    destination.write(chunk)
+                destination.close()
+                submission.submission_A += 1
+                submission.save()
+                # return render(request, "Personal_page_3.html")
+                return redirect("../get_score_A")
         else:
-            # print("222")
-            os.mkdir(upload_path)
-            destination = open(os.path.join(upload_path, myFile.name), 'wb+')
-            print(myFile.name)
-            # 打开特定的文件进行二进制的写操作
-            for chunk in myFile.chunks():  # 分块写入文件
-                destination.write(chunk)
-            destination.close()
-            submission.submission_A += 1
-            submission.save()
-            # return render(request, "Personal_page_3.html")
-            return redirect("../get_score_A")
+            return render(request,"Personal_page_3.html",{'error_upload_TestA':'TestA剩余提交次数为0'})
 
 def upload_file_B(request):
     if request.method == "POST":    # 请求方法为POST时，进行处理
@@ -133,8 +138,10 @@ def upload_file_B(request):
         # print(par_no.user_id)
         #判断文件是否上传过，如果无，则上传，如果有，则提醒用户不能重复上传
         submission = join_team_models.team_info.objects.get(team_no=int(par_no.team_id))
+        max_submission_B = sign_up_models.competition_topic.objects.get(com_topic_id=int(par_no.event_id)).TestB_max_upload_times
+
         print("submission")
-        if(os.path.exists(upload_path) and int(submission.submission_B)<3):
+        if(os.path.exists(upload_path) and int(submission.submission_B)<int(max_submission_B)):
             # return render(request,"Personal_page_3.html",{'error':"禁止重复上传"})
             destination = open(os.path.join(upload_path, myFile.name), 'wb+')
             print(myFile.name)
@@ -155,7 +162,7 @@ def upload_file_B(request):
             # return render(request, "Personal_page_3.html",{"rest":rest})
             request.session['rest'] = rest
             return redirect("../get_score_B")
-        elif(os.path.exists(upload_path) == False and int(submission.submission_B)<3):
+        elif(os.path.exists(upload_path) == False and int(submission.submission_B)< int(max_submission_B)):
 
             os.mkdir(upload_path)
             destination = open(os.path.join(upload_path,myFile.name),'wb')
@@ -176,7 +183,7 @@ def upload_file_B(request):
             rest = 3-submission.submission_B
             request.session['rest'] = rest
             return redirect("../get_score_B")
-        elif(int(submission.submission_B)>=3):
+        elif(int(submission.submission_B) >= max_submission_B):
             return render(request,"Personal_page_3.html",{'error':"无法继续提交"})
 
 
@@ -197,14 +204,25 @@ def run_file_A(request):
     if(your_score == "file not exist"):
         return render(request,"Personal_page_3.html",{'error':"file not exist"})
     else:
-       if(max_submission_A == 0):
+       if(max_submission_A == -1):
         your_score_percent = str(your_score * 100) + "%"
         # file_path = "./static/score_record/" + str(par_no.event_id) + "A.csv"
         info = [str(par_no.team_id), str(your_score)]
         csv_file = open(file_path, 'w+', newline='')
 
-        if (info in file_list):
-            pass
+        # if (info in file_list):
+        #     pass
+        # else:
+        #     file_list.append(info)
+        index_0 = -1
+        for i in range(0,len(file_list)-1):
+            if(file_list[i][0] == str(par_no.team_id)):
+                index_0 = i
+                print("有队伍了！！！")
+        print("索引为：",index_0)
+        if(index_0 != -1):
+            file_list[index_0][1] = str(your_score)
+            print("有队伍了！！！")
         else:
             file_list.append(info)
         file_list.sort(key=operator.itemgetter(1), reverse=True)
@@ -230,8 +248,19 @@ def run_file_A(request):
            info = [str(par_no.team_id), str(your_score)]
            csv_file = open(file_path, 'w+', newline='')
 
-           if (info in file_list):
-               pass
+           # if (info in file_list):
+           #     pass
+           # else:
+           #     file_list.append(info)
+           index_0 = -1
+           for i in range(0, len(file_list) - 1):
+               if (file_list[i][0] == str(par_no.team_id)):
+                   index_0 = i
+                   print("有队伍了！！！")
+           print("索引为：", index_0)
+           if (index_0 != -1):
+               file_list[index_0][1] = str(your_score)
+               print("有队伍了！！！")
            else:
                file_list.append(info)
            file_list.sort(key=operator.itemgetter(1), reverse=True)
@@ -278,8 +307,19 @@ def run_file_B(request):
         file_path = "./static/score_record/" + str(par_no.event_id) + "B.csv"
         info = [str(par_no.team_id), str(your_score)]
         csv_file = open(file_path,'w+',newline='')
-        if(info in file_list):
-            pass
+        # if(info in file_list):
+        #     pass
+        # else:
+        #     file_list.append(info)
+        index_0 = -1
+        for i in range(0, len(file_list) - 1):
+            if (file_list[i][0] == str(par_no.team_id)):
+                index_0 = i
+                print("有队伍了！！！")
+        print("索引为：", index_0)
+        if (index_0 != -1):
+            file_list[index_0][1] = str(your_score)
+            print("有队伍了！！！")
         else:
             file_list.append(info)
         file_list.sort(key=operator.itemgetter(1),reverse=True)
