@@ -142,7 +142,7 @@
 				<br><br>
 					<!--<label style="color: #000000">验证码:&nbsp;&nbsp;&nbsp;&nbsp;</label>-->
 					验证码：&nbsp;&nbsp;&nbsp;&nbsp;
-                   <input type="text" name="code" placeholder="请输入手机验证码" style="width: 140px;" AUTOCOMPLETE="off">
+                   <input type="text" name="code" id="code" placeholder="请输入手机验证码" style="width: 140px;" AUTOCOMPLETE="off">
                    &nbsp;&nbsp;
                    <input type="button" value=" 获取验证码" id="zphone" style="width: 100px;margin-left: 10px">
 					<br><br>
@@ -333,9 +333,9 @@
                 console.log($("#question").val());
                 console.log($("#answer").val());
                 if(l1 == "" && l2 == "" && l3 == "" && l4 == ""
-                    && $('#repeat_password').val() != null && $("#nickname").val() != null
-                    && $("#mobile").val() != null && $("#email").val() != null && $("#question").val() != null
-                    &&$("#answer").val() != null  ){
+                    && $('#repeat_password').val() != "" && $("#nickname").val() != ""
+                    && $("#mobile").val() != "" && $("#email").val() != "" && $("#question").val() != ""
+                    &&$("#answer").val() != "" &&$('#zphone').val() != "" && $('#code').val() != "" ){
                     this.form.submit();
                 }
                 else{

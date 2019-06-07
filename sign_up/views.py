@@ -87,6 +87,7 @@ def show_details_2(request,topic_id):
 
     user_id = request.session['user_id']
     # event_id = models.participant.objects.filter(user_id=user_id)[0].event_id
+
     ####TestA成绩单显示
     file_path_A = "D:\\DLCSY-version\\DLCSY-V0.0.4\\static\\score_record\\" + str(topic_id) + "A.csv"
     file_list_A = list(csv.reader(open(file_path_A, 'r')))
@@ -344,6 +345,7 @@ def ali():
     # 沙箱环境地址：https://openhome.alipay.com/platform/appDaily.htm?tab=info
 
     app_id = models.app_id.objects.get(id=1).app_id
+    print("appid为:" ,app_id)
 
     # POST请求，用于最后的检测
     notify_url = "http://127.0.0.1:8000/back_urls/"

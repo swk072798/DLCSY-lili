@@ -64,10 +64,8 @@ def caculate_score(submitfile,listfile):
         if target[7] == "1":
             if dist(x,y,x1,y1) or dist(x,y,x2,y2) or dist(x,y,x3,y3):
                 right = right + 1
-                if right % 2 == 0:
-                    print("\r real time score:%.3f"%(float(right)/float(total+1)),end="")
-    score = round(float(right)/float(int(float(total))+1),3)
-    print("\nright:%d total:%d score:%.3f"%(right,total,float(right)/float(int(float(total))+1)))
+    score = round(float(right)/float(int(float(total))),3)
+    print("\nright:%d total:%d score:%.3f"%(right,total,float(right)/float(int(float(total)))))
     return score
 
 if __name__ == '__main__':

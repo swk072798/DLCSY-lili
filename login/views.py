@@ -21,9 +21,9 @@ from sign_up import models as sign_models
 host = "106.ihuyi.com"
 sms_send_uri = "/webservice/sms.php?method=Submit"
 # 用户名是登录ihuyi.com账号名（例如：cf_demo123）
-account = "C97532471"
+account = "C00891212"           #想要使用别的账户修改这个和下面的密码
 # 密码 查看密码请登录用户中心->验证码、通知短信->帐户及签名设置->APIKEY
-password = "5da667b8f0caac0da573d7b09018e3de"
+password = "a20e1cbf1319818b620b3f2d4c075b14"
 
 def send_phone_message(request):
     """发送信息的视图函数"""
@@ -70,7 +70,9 @@ def send_phone_message(request):
 def captcha():
     # 验证码，第一次请求
     hashkey = CaptchaStore.generate_key()
+    print("hashkey:",hashkey)
     image_url = captcha_image_url(hashkey)
+    print("image_url：",image_url)
     captcha = {'hashkey': hashkey, 'image_url': image_url}
     return captcha
 
@@ -311,6 +313,6 @@ def check_code(request):
             print('这个邮箱绑定过其它账号')
             return render(request, 'Login.html', context2)
     else:
-        print('邮箱未注册')
+        # print('邮箱未注册')
         return render(request,'Login.html',context3)
 
